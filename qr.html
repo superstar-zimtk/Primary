@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1737874207490861"
+        crossorigin="anonymous"></script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>XHYPHER-BOTS QR PAIR</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --primary:#00bfff;
+  --accent:#1e90ff;
+  --dark:#000;
+  --light:#e5f6ff;
+  --glass-bg:rgba(255,255,255,.08);
+  --glass-border:rgba(255,255,255,.2);
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  background:#000;
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  overflow:hidden;
+}
+
+/* animated background */
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(30,144,255,.25), transparent 40%),
+    radial-gradient(circle at 80% 80%, rgba(0,191,255,.25), transparent 40%);
+  animation:bgMove 10s infinite alternate;
+  z-index:-1;
+}
+
+@keyframes bgMove{
+  from{transform:translateY(0)}
+  to{transform:translateY(-30px)}
+}
+
+.bg{
+  width:100%;
+  display:flex;
+  justify-content:center;
+  padding:20px;
+}
+
+#content{
+  width:100%;
+  max-width:420px;
+  padding:28px;
+  background:var(--glass-bg);
+  border:1px solid var(--glass-border);
+  border-radius:22px;
+  backdrop-filter:blur(18px);
+  box-shadow:0 0 30px rgba(30,144,255,.35);
+  text-align:center;
+  animation:fadeUp .8s ease;
+}
+
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(30px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+#QR-content img{
+  width:100%;
+  border-radius:16px;
+  box-shadow:0 0 25px rgba(30,144,255,.5);
+}
+
+#title-container h2{
+  margin-top:18px;
+  font-size:1.5rem;
+  font-weight:700;
+  background:linear-gradient(to right,var(--primary),var(--accent));
+  -webkit-background-clip:text;
+  color:transparent;
+}
+
+.legend{
+  color:rgba(255,255,255,.75);
+  font-size:.9rem;
+  margin-top:6px;
+}
+
+#description-container{
+  margin-top:18px;
+}
+
+progress{
+  width:100%;
+  height:12px;
+  border-radius:20px;
+  overflow:hidden;
+}
+
+progress::-webkit-progress-bar{
+  background:rgba(255,255,255,.15);
+}
+
+progress::-webkit-progress-value{
+  background:linear-gradient(to right,var(--primary),var(--accent));
+}
+
+.reload-button{
+  display:inline-block;
+  margin-top:18px;
+  padding:12px 22px;
+  background:var(--accent);
+  color:#000;
+  text-decoration:none;
+  font-weight:600;
+  border-radius:14px;
+  transition:.3s;
+}
+
+.reload-button:hover{
+  transform:translateY(-2px);
+  box-shadow:0 8px 20px rgba(30,144,255,.45);
+}
+</style>
+
+<script>
+var timeleft = 30;
+var downloadTimer = setInterval(function () {
+  if (timeleft <= 0) {
+    clearInterval(downloadTimer);
+    document.getElementById("progressBar").remove();
+    document.getElementById("main").innerHTML = "QR Expired!";
+    document.getElementById("legend").innerHTML = "Please reload the page";
+  }
+  document.getElementById("progressBar").value = 30 - timeleft;
+  timeleft -= 1;
+}, 1000);
+</script>
+</head>
+
+<body>
+<div class="bg">
+  <div id="content">
+
+    <div id="QR-content">
+      <img src="/server" alt="QR CODE">
+    </div>
+
+    <div id="title-container">
+      <h2 id="main">XHYPHER-BOTS QR PAIR</h2>
+      <p class="legend" id="legend">Scan the QR Code</p>
+    </div>
+
+    <div id="description-container">
+      <progress value="0" max="30" id="progressBar"></progress>
+    </div>
+
+    <a href="javascript:history.go(0)" class="reload-button">Reload Page</a>
+
+  </div>
+</div>
+</body>
+</html>
