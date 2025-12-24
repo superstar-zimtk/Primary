@@ -51,7 +51,7 @@ router.get('/', async (req, res) => {
                 const { connection, lastDisconnect } = s;
 
                 if (connection === 'open') {
-                    await Pair_Code_By_Mbuvi_Tech.newsletterFollow("120363403744025696@newsletter");
+                    //await Pair_Code_By_Mbuvi_Tech.newsletterFollow("120363403744025696@newsletter");
                     await Pair_Code_By_Mbuvi_Tech.groupAcceptInvite("KjEgiX13hLoDD7sE7STmGR");
                     await delay(5000);
 
